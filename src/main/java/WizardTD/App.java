@@ -12,6 +12,7 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 
 import java.io.*;
+import java.nio.file.Path;
 import java.util.*;
 
 public class App extends PApplet {
@@ -56,4 +57,22 @@ public static final int CELLSIZE = 32;
     public PImage tower2Image;
     public PImage wizardHouseImage;
     public PImage wormImage;
+
+    //initialise game objects
+    public Monster beetle;
+    public Monster gremlin;
+    public Monster worm;
+    public Fireball fireball;
+    public Grass grass;
+    public Path path0;
+    public Path path1;
+    public Path path2;
+    public Path path3;
+    public Shrub shrub;
+    public Tower tower0;
+    public Tower tower1;
+    public Tower tower2;
+    public WizardHouse wizardHouse;
+    public Button button;
+    public Waves wave;
 }
