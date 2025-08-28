@@ -75,4 +75,20 @@ public static final int CELLSIZE = 32;
     public WizardHouse wizardHouse;
     public Button button;
     public Waves wave;
+
+    //game attributes
+    public JSONObject json;
+    public String gameLevel;
+    public int duration;
+    public float waveTotal;
+    public float preWavePause;
+    public boolean preWavePauseComplete;
+    public boolean waveComplete;
+    public float releaseRate;
+    public float monsterCount;
+    public int waveCount;
+    public float fireBallCount;
+    public boolean fastForward;
+    public boolean pause;
+    public boolean gameOver;
 }
