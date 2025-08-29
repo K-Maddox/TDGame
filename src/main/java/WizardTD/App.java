@@ -144,4 +144,13 @@ public static final int CELLSIZE = 32;
     public void settings() {
         size(WIDTH, HEIGHT);
     }
+
+    /**
+     * Load all resources such as images. Initialise the elements such as the player, enemies and map elements.
+     */
+	@Override
+    public void setup() {
+        frameRate(FPS);
+        
+    }
 }
