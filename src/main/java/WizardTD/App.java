@@ -109,4 +109,15 @@ public static final int CELLSIZE = 32;
     public boolean upgradeRange;
     public boolean upgradeSpeed;
     public boolean upgradeDamage;
+
+    //player attributes
+    public int mana;
+    public int manaCap;
+    public int manaPerSecond;
+    public int manaCount;
+    public int manaSpellCost;
+    public int manaSpellCostIncrease;
+    public float manaSpellCapMultiplier;
+    public float manaSpellGainedMultiplier;
+    public float manaKillMultiplier;
 }
