@@ -136,4 +136,12 @@ public static final int CELLSIZE = 32;
     public App() {
         this.configPath = "config.json";
     }
+
+    /**
+     * Initialise the setting of the window size.
+     */
+	@Override
+    public void settings() {
+        size(WIDTH, HEIGHT);
+    }
 }
