@@ -151,6 +151,31 @@ public static final int CELLSIZE = 32;
 	@Override
     public void setup() {
         frameRate(FPS);
+
+        // Load images during setup
+        this.beetleImage = this.loadImage("src/main/resources/WizardTD/beetle.png");
+        this.fireballImage = this.loadImage("src/main/resources/WizardTD/fireball.png");
+        this.grassImage = this.loadImage("src/main/resources/WizardTD/grass.png");
+        this.gremlinImage = this.loadImage("src/main/resources/WizardTD/gremlin.png");
+        this.gremlin1Image = this.loadImage("src/main/resources/WizardTD/gremlin1.png");
+        this.gremlin2Image = this.loadImage("src/main/resources/WizardTD/gremlin2.png");
+        this.gremlin3Image = this.loadImage("src/main/resources/WizardTD/gremlin3.png");
+        this.gremlin4Image = this.loadImage("src/main/resources/WizardTD/gremlin4.png");
+        this.gremlin5Image = this.loadImage("src/main/resources/WizardTD/gremlin5.png");
+        this.path0Image = this.loadImage("src/main/resources/WizardTD/path0.png");
+        this.path0ImageRotate = this.loadImage("src/main/resources/WizardTD/path0.png");
+        this.path1Image = this.loadImage("src/main/resources/WizardTD/path1.png");
+        this.path1ImageRotate = this.loadImage("src/main/resources/WizardTD/path1.png");
+        this.path2Image = this.loadImage("src/main/resources/WizardTD/path2.png");
+        this.path2ImageRotate = this.loadImage("src/main/resources/WizardTD/path2.png");
+        this.path3Image = this.loadImage("src/main/resources/WizardTD/path3.png");
+        this.path3ImageRotate = this.loadImage("src/main/resources/WizardTD/path3.png");
+        this.shrubImage = this.loadImage("src/main/resources/WizardTD/shrub.png");
+        this.tower0Image = this.loadImage("src/main/resources/WizardTD/tower0.png");
+        this.tower1Image = this.loadImage("src/main/resources/WizardTD/tower1.png");
+        this.tower2Image = this.loadImage("src/main/resources/WizardTD/tower2.png");
+        this.wizardHouseImage = this.loadImage("src/main/resources/WizardTD/wizard_house.png");
+        this.wormImage = this.loadImage("src/main/resources/WizardTD/worm.png");
         
     }
 }
