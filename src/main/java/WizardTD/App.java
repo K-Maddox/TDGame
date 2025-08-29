@@ -91,4 +91,12 @@ public static final int CELLSIZE = 32;
     public boolean fastForward;
     public boolean pause;
     public boolean gameOver;
+
+    //monster attributes
+    public String type;
+    public int hp;
+    public float speed;
+    public float armour;
+    public int manaGained;
+    public int quantity;
 }
