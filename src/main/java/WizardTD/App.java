@@ -129,4 +129,11 @@ public static final int CELLSIZE = 32;
     public ArrayList<Fireball> allFireballs = new ArrayList<Fireball>();
     public ArrayList<Button> buttonObjects = new ArrayList<Button>();
     public ArrayList<Waves> waveObjects = new ArrayList<Waves>();
+
+    /**
+     * Store the config path
+     */
+    public App() {
+        this.configPath = "config.json";
+    }
 }
