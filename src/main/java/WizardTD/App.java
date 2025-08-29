@@ -99,4 +99,14 @@ public static final int CELLSIZE = 32;
     public float armour;
     public int manaGained;
     public int quantity;
+
+    //tower attributes
+    public int towerRange;
+    public float towerFiringSpeed;
+    public int towerDamage;
+    public int towerCost;
+    public boolean towerActive;
+    public boolean upgradeRange;
+    public boolean upgradeSpeed;
+    public boolean upgradeDamage;
 }
