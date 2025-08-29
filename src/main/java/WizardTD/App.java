@@ -120,4 +120,13 @@ public static final int CELLSIZE = 32;
     public float manaSpellCapMultiplier;
     public float manaSpellGainedMultiplier;
     public float manaKillMultiplier;
+
+    //lists of objects
+    public ArrayList<GameObject> allObjects = new ArrayList<GameObject>();
+    public ArrayList<GameObject> spawnPoints = new ArrayList<GameObject>();
+    public ArrayList<GameObject> allPaths = new ArrayList<GameObject>();
+    public ArrayList<Monster> allMonsters = new ArrayList<Monster>();
+    public ArrayList<Fireball> allFireballs = new ArrayList<Fireball>();
+    public ArrayList<Button> buttonObjects = new ArrayList<Button>();
+    public ArrayList<Waves> waveObjects = new ArrayList<Waves>();
 }
