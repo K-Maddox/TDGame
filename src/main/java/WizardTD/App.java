@@ -176,6 +176,11 @@ public static final int CELLSIZE = 32;
         this.tower2Image = this.loadImage("src/main/resources/WizardTD/tower2.png");
         this.wizardHouseImage = this.loadImage("src/main/resources/WizardTD/wizard_house.png");
         this.wormImage = this.loadImage("src/main/resources/WizardTD/worm.png");
+
+        //retieve all settings from config file
+        json = loadJSONObject(this.configPath);
         
+        //initialise game map
+        gameLevel = json.getString("layout");
     }
 }
