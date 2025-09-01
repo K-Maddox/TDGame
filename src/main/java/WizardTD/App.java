@@ -182,5 +182,31 @@ public static final int CELLSIZE = 32;
         
         //initialise game map
         gameLevel = json.getString("layout");
+
+        //store each wave in waveObjects array
+        JSONArray waves = json.getJSONArray("waves");
+        for (int i = 0; i < waves.size(); i++){
+
+            JSONObject objects = waves.getJSONObject(i);
+
+            duration = objects.getInt("duration");
+            preWavePause = objects.getFloat("pre_wave_pause");
+            JSONArray monsters = objects.getJSONArray("monsters");
+
+            for (int j = 0; j < monsters.size(); j++){
+                JSONObject monsterAttributes = monsters.getJSONObject(j);
+
+                type = monsterAttributes.getString("type");
+                hp = monsterAttributes.getInt("hp");
+                speed = monsterAttributes.getFloat("speed");
+                armour = monsterAttributes.getInt("armour");
+                manaGained = monsterAttributes.getInt("mana_gained_on_kill");
+                quantity = monsterAttributes.getInt("quantity");
+
+                waveObjects.add(wave = new Waves(duration, preWavePause, type, hp, speed, armour, manaGained, quantity));
+            }
+        }
+
+
     }
 }
