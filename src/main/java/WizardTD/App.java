@@ -213,6 +213,15 @@ public static final int CELLSIZE = 32;
         towerDamage = json.getInt("initial_tower_damage");
         towerCost = json.getInt("tower_cost");
 
+        //initialise player attributes
+        mana = json.getInt("initial_mana");
+        manaCap = json.getInt("initial_mana_cap");
+        manaPerSecond = json.getInt("initial_mana_gained_per_second");
+        manaSpellCost = json.getInt("mana_pool_spell_initial_cost");
+        manaSpellCostIncrease = json.getInt("mana_pool_spell_cost_increase_per_use");
+        manaSpellCapMultiplier = json.getFloat("mana_pool_spell_cap_multiplier");
+        manaSpellGainedMultiplier  = json.getFloat("mana_pool_spell_mana_gained_multiplier");
+
 
     }
 }
