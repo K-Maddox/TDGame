@@ -207,6 +207,12 @@ public static final int CELLSIZE = 32;
             }
         }
 
+        //initialise tower attributes
+        towerRange = json.getInt("initial_tower_range");
+        towerFiringSpeed = json.getFloat("initial_tower_firing_speed");
+        towerDamage = json.getInt("initial_tower_damage");
+        towerCost = json.getInt("tower_cost");
+
 
     }
 }
