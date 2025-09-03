@@ -250,5 +250,24 @@ public static final int CELLSIZE = 32;
         int line2 = 735; //710 second column of text boxes
         boolean box = true;
         boolean noBox = false;
+
+        buttonObjects.add(button = new Button(5, 5, 200, 30, largeText, centre, "Wave 2 starts: 9" + duration, noBox, false, false, true, false, false));
+        buttonObjects.add(button = new Button(350, 10, 50, 20, largeText, centre, "MANA: ", noBox));
+        buttonObjects.add(button = new Button(420, 10, 300, 20, smallText, centre, "Graphic Bar", box, false, false, false, true, false));
+        buttonObjects.add(button = new Button(line1, 50, edge1, edge1, largeText, centre, "FF", box));
+        buttonObjects.add(button = new Button(line2, 50, edge2, edge2, smallText, right, "2x speed", noBox));
+        buttonObjects.add(button = new Button(line1, 110, edge1, edge1, largeText, right, "P", box));
+        buttonObjects.add(button = new Button(line2, 110, edge2, edge2, smallText, right, "PAUSE", noBox));
+        buttonObjects.add(button = new Button(line1, 170, edge1, edge1, largeText, right, "T", box, true, false, false, false, false));
+        buttonObjects.add(button = new Button(line2, 170, edge2, edge2, smallText, right,  "Build\ntower", noBox));
+        buttonObjects.add(button = new Button(line1, 230, edge1, edge1, largeText, centre, "U1", box));
+        buttonObjects.add(button = new Button(line2, 230, edge2, edge2, smallText, right, "Upgrade\nrange", noBox));
+        buttonObjects.add(button = new Button(line1, 290, edge1, edge1, largeText, centre, "U2", box));
+        buttonObjects.add(button = new Button(line2, 290, edge2, edge2, smallText, right, "Upgrade \nspeed", noBox));
+        buttonObjects.add(button = new Button(line1, 350, edge1, edge1, largeText, centre, "U3", box));
+        buttonObjects.add(button = new Button(line2, 350, edge2, edge2, smallText, right, "Upgrade\ndamage", noBox));
+        buttonObjects.add(button = new Button(line1, 410, edge1, edge1, largeText, right, "M", box, false, true, false, false, false));
+        buttonObjects.add(button = new Button(line2, 410, edge2, edge2, smallText, right, "Mana pool\ncost: ", noBox,false, false, false, false, true));
+
     }
 }
