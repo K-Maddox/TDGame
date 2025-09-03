@@ -237,5 +237,18 @@ public static final int CELLSIZE = 32;
         fireBallCount = towerFiringSpeed * FPS;
         timer = (int)preWavePause * FPS;
         manaKillMultiplier = 1;
+
+        //create buttons
+        int largeText = 22; //text size
+        int smallText = 12;
+        int centre = 3; //text alignment
+        int right = 39;
+        int left = 37;
+        int edge1 = 40; //text with boxes
+        int edge2 = 40; //text no boxes
+        int line1 = 660; //first column of text boxes
+        int line2 = 735; //710 second column of text boxes
+        boolean box = true;
+        boolean noBox = false;
     }
 }
