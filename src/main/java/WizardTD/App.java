@@ -222,6 +222,20 @@ public static final int CELLSIZE = 32;
         manaSpellCapMultiplier = json.getFloat("mana_pool_spell_cap_multiplier");
         manaSpellGainedMultiplier  = json.getFloat("mana_pool_spell_mana_gained_multiplier");
 
-
+        //initial starting conditions for the waves
+        waveCount = 0;
+        wave = waveObjects.get(0);
+        duration = wave.getDuration();
+        preWavePause = wave.getPreWavePause();
+        quantity = wave.getQuantity();
+        preWavePauseComplete = false;
+        waveComplete = false;
+        waveTotal = FPS * (duration + preWavePause);
+        releaseRate = FPS * duration / quantity;
+        monsterCount = releaseRate;
+        manaCount = FPS;
+        fireBallCount = towerFiringSpeed * FPS;
+        timer = (int)preWavePause * FPS;
+        manaKillMultiplier = 1;
     }
 }
