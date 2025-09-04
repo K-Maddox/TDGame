@@ -282,5 +282,20 @@ public static final int CELLSIZE = 32;
         int numCols = BOARD_WIDTH;
         char[][] matrix = new char[numRows][numCols];
 
+        //find positions of path, shrub and wizard house
+        try (BufferedReader reader = new BufferedReader(new FileReader(gameLevel))){
+            String line;
+            int row = 0;
+            while ((line = reader.readLine()) != null){
+                char[] chars = line.toCharArray();
+                for (int col = 0; col < chars.length; col++){
+                    matrix[row][col] = chars[col];
+                }
+                row++;
+            }
+            reader.close();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
