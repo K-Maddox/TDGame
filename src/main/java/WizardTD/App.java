@@ -269,5 +269,12 @@ public static final int CELLSIZE = 32;
         buttonObjects.add(button = new Button(line1, 410, edge1, edge1, largeText, right, "M", box, false, true, false, false, false));
         buttonObjects.add(button = new Button(line2, 410, edge2, edge2, smallText, right, "Mana pool\ncost: ", noBox,false, false, false, false, true));
 
+
+        //create grass game board
+        for (int x = 0; x < WIDTH - SIDEBAR; x += BOARD_WIDTH){
+            for (int y = TOPBAR; y < HEIGHT; y += BOARD_WIDTH){
+                allObjects.add(this.grass = new Grass(x, y, grassImage));
+            }
+        }
     }
 }
