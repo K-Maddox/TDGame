@@ -276,5 +276,11 @@ public static final int CELLSIZE = 32;
                 allObjects.add(this.grass = new Grass(x, y, grassImage));
             }
         }
+
+        //create rest of game board via matrix array
+        int numRows = BOARD_WIDTH;
+        int numCols = BOARD_WIDTH;
+        char[][] matrix = new char[numRows][numCols];
+
     }
 }
