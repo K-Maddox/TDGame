@@ -306,7 +306,11 @@ public static final int CELLSIZE = 32;
             for (int col= 0; col < matrix[row].length; col++){
                 char character = matrix[row][col];
 
-    
+                //add shrub
+                if (character == 'S'){
+                    allObjects.add(this.shrub = new Shrub(x, y, shrubImage));
+                }
+                
                 x += CELLSIZE;
             }
             x = 0;
