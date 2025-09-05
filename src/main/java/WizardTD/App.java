@@ -355,6 +355,34 @@ public static final int CELLSIZE = 32;
                         allObjects.add(this.path0 = new Path(x, y, path0Image));
                     }
 
+                    //2 neighbours
+                    else if (neighbourUp == 'X' && neighbourDown == 'X' && neighbourRight != 'X' && neighbourLeft != 'X'){
+                        degrees = 90;
+                        path0ImageRotate = rotateImageByDegrees(path0Image, degrees);
+                        allObjects.add(this.path0 = new Path(x, y, path0ImageRotate));
+                    }
+                    else if (neighbourUp != 'X' && neighbourDown != 'X' && neighbourRight == 'X' && neighbourLeft == 'X'){
+                        allObjects.add(this.path0 = new Path(x, y, path0Image));
+                    }
+                    else if (neighbourUp == 'X' && neighbourDown != 'X' && neighbourRight != 'X' && neighbourLeft == 'X'){
+                        degrees = 90;
+                        path1ImageRotate = rotateImageByDegrees(path1Image, degrees);
+                        allObjects.add(this.path1 = new Path(x, y, path1ImageRotate));
+                    }
+                    else if (neighbourUp != 'X' && neighbourDown == 'X' && neighbourRight == 'X' && neighbourLeft != 'X'){
+                        degrees = 270;
+                        path1ImageRotate = rotateImageByDegrees(path1Image, degrees);
+                        allObjects.add(this.path1 = new Path(x, y, path1ImageRotate));
+                    }
+                    else if (neighbourUp == 'X' && neighbourDown != 'X' && neighbourRight == 'X' && neighbourLeft != 'X'){
+                        degrees = 180;
+                        path1ImageRotate = rotateImageByDegrees(path1Image, degrees);
+                        allObjects.add(this.path1 = new Path(x, y, path1ImageRotate));
+                    }
+                    else if (neighbourUp != 'X' && neighbourDown == 'X' && neighbourRight != 'X' && neighbourLeft == 'X'){
+                        allObjects.add(this.path1 = new Path(x, y, path1Image));
+                    }
+
                 }
 
                 x += CELLSIZE;
