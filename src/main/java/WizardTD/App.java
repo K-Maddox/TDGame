@@ -310,7 +310,53 @@ public static final int CELLSIZE = 32;
                 if (character == 'S'){
                     allObjects.add(this.shrub = new Shrub(x, y, shrubImage));
                 }
-                
+
+                //add path
+                if (character == 'X'){
+
+                    //check positions of neighbours to determine which path image and rotation
+                    double degrees = 0;
+                    char neighbourUp = matrix[row][col]; //self
+                    char neighbourDown = matrix[row][col]; //self
+                    char neighbourRight = matrix[row][col]; //self
+                    char neighbourLeft = matrix[row][col]; //self
+                    
+                    //check if at a border - borders are always paths hence declared as paths above
+                    if (row != 0){
+                        neighbourUp = matrix[row - 1][col];
+                    }
+                    if (row != matrix.length - 1){
+                        neighbourDown = matrix[row + 1][col];
+                    }
+                    if (col != 0){
+                        neighbourLeft = matrix[row][col - 1];
+                    }
+                    if (col != matrix[row].length - 1){
+                        neighbourRight = matrix[row][col + 1];
+                    }
+
+                    //conditions on which image to use and which way to rotate
+
+                    //1 neighbour
+                    if (neighbourUp == 'X' && neighbourDown != 'X' && neighbourRight != 'X' && neighbourLeft != 'X'){
+                        degrees = 90;
+                        path0ImageRotate = rotateImageByDegrees(path0Image, degrees);
+                        allObjects.add(this.path0 = new Path(x, y, path0ImageRotate));
+                    }
+                    else if (neighbourUp != 'X' && neighbourDown == 'X' && neighbourRight != 'X' && neighbourLeft != 'X'){
+                        degrees = 90;
+                        path0ImageRotate = rotateImageByDegrees(path0Image, degrees);
+                        allObjects.add(this.path0 = new Path(x, y, path0ImageRotate));
+                    }
+                    else if (neighbourUp != 'X' && neighbourDown != 'X' && neighbourRight == 'X' && neighbourLeft != 'X'){
+                        allObjects.add(this.path0 = new Path(x, y, path0Image));
+                    }
+                    else if (neighbourUp != 'X' && neighbourDown != 'X' && neighbourRight != 'X' && neighbourLeft == 'X'){
+                        allObjects.add(this.path0 = new Path(x, y, path0Image));
+                    }
+
+                }
+
                 x += CELLSIZE;
             }
             x = 0;
