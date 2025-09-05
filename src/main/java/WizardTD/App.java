@@ -297,5 +297,20 @@ public static final int CELLSIZE = 32;
         } catch (IOException e){
             e.printStackTrace();
         }
+
+        //traverse matrix to print objects
+        int x = 0;
+        int y = TOPBAR;
+        
+        for (int row = 0; row < matrix.length; row++){
+            for (int col= 0; col < matrix[row].length; col++){
+                char character = matrix[row][col];
+
+    
+                x += CELLSIZE;
+            }
+            x = 0;
+            y += CELLSIZE;
+        }
     }
 }
