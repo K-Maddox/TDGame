@@ -403,6 +403,10 @@ public static final int CELLSIZE = 32;
                         allObjects.add(this.path2 = new Path(x, y, path2ImageRotate));
                     }
                     
+                    //4 neighbours
+                    else if (neighbourUp == 'X' && neighbourDown == 'X' && neighbourRight == 'X'  && neighbourLeft == 'X'){
+                        allObjects.add(this.path3 = new Path(x, y, path3Image));
+                    }
                 }
 
                 x += CELLSIZE;
