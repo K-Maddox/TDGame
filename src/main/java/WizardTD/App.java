@@ -437,5 +437,15 @@ public static final int CELLSIZE = 32;
             x = 0;
             y += CELLSIZE;
         }
+
+        //find spawn points
+        for (GameObject obj : allObjects){
+            if (obj instanceof Path){
+                allPaths.add(obj); //add to path list
+                if (obj.getX() == 0 || obj.getX() == WIDTH - SIDEBAR - CELLSIZE || obj.getY() == TOPBAR || obj.getY() == HEIGHT - CELLSIZE){
+                    spawnPoints.add(obj); //add to spawn point list
+                }
+            }
+        }
     }
 }
