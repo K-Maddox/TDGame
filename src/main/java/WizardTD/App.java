@@ -402,11 +402,23 @@ public static final int CELLSIZE = 32;
                         path2ImageRotate = rotateImageByDegrees(path2Image, degrees);
                         allObjects.add(this.path2 = new Path(x, y, path2ImageRotate));
                     }
-                    
+
                     //4 neighbours
                     else if (neighbourUp == 'X' && neighbourDown == 'X' && neighbourRight == 'X'  && neighbourLeft == 'X'){
                         allObjects.add(this.path3 = new Path(x, y, path3Image));
                     }
+                }
+
+                //add Wizard House
+                if (character == 'W'){
+                    double degrees = 0;
+
+                    //check positions of neighbours to determine which rotation - wizard house already pointing left
+                    char neighbourUp = matrix[row - 1][col];
+                    char neighbourDown = matrix[row + 1][col];
+                    char neighbourRight = matrix[row][col + 1];
+                    
+                    
                 }
 
                 x += CELLSIZE;
