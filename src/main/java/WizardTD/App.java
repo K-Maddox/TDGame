@@ -418,7 +418,18 @@ public static final int CELLSIZE = 32;
                     char neighbourDown = matrix[row + 1][col];
                     char neighbourRight = matrix[row][col + 1];
                     
-                    
+                    if (neighbourUp == 'X'){
+                        degrees = 90;
+                    }
+                    if (neighbourDown == 'X'){
+                        degrees = 270;
+                    }
+                    if (neighbourRight == 'X'){
+                        degrees = 180;
+                    }
+
+                    wizardHouseImage = rotateImageByDegrees(wizardHouseImage, degrees);
+                    allObjects.add(this.wizardHouse = new WizardHouse(x, y, wizardHouseImage));
                 }
 
                 x += CELLSIZE;
