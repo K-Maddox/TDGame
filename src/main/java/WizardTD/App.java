@@ -448,4 +448,26 @@ public static final int CELLSIZE = 32;
             }
         }
     }
+
+    /**
+     * Receive key pressed signal from the keyboard.
+     */
+	@Override
+    public void keyPressed(){
+        //fast forward
+        if (this.keyCode == 70) {
+            pause = false;
+            fastForward = !fastForward;
+
+            //changes button yellow
+            for (Button button : buttonObjects){
+                if (button.getText() == "FF"){
+                    button.setActiveFlag();
+                }
+                if (button.getText() == "P" && button.getActiveFlag()){
+                    button.setActiveFlag();
+                }
+            }
+        }
+    }
 }
