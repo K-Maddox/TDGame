@@ -484,5 +484,17 @@ public static final int CELLSIZE = 32;
                 }
             }
         }
+
+        //create tower
+        if (this.keyCode == 84 && !pause){
+            towerActive = !towerActive;
+            
+            //changes button yellow
+            for (Button button : buttonObjects){
+                if (button.getText() == "T"){
+                    button.setActiveFlag();
+                }
+            }
+        }
     }
 }
