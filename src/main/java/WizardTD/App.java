@@ -469,5 +469,20 @@ public static final int CELLSIZE = 32;
                 }
             }
         }
+        //pause
+        if (this.keyCode == 80) {
+            fastForward = false;
+            pause = !pause;
+
+            //changes button yellow
+            for (Button button : buttonObjects){
+                if (button.getText() == "P"){
+                    button.setActiveFlag();
+                }
+                if (button.getText() == "FF" && button.getActiveFlag()){
+                    button.setActiveFlag();
+                }
+            }
+        }
     }
 }
