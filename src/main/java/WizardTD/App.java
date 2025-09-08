@@ -496,5 +496,17 @@ public static final int CELLSIZE = 32;
                 }
             }
         }
+
+        //upgrade tower range
+        if (this.keyCode == 49){
+            upgradeRange = !upgradeRange;
+
+            //changes button yellow
+            for (Button button : buttonObjects){
+                if (button.getText() == "U1"){
+                    button.setActiveFlag();
+                }
+            }
+        }
     }
 }
