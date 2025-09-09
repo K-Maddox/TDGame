@@ -520,5 +520,17 @@ public static final int CELLSIZE = 32;
                 }
             }
         }
+
+        //upgrade tower damage
+        if (this.keyCode == 51){
+            upgradeDamage = !upgradeDamage;
+            
+            //changes button yellow
+            for (Button button : buttonObjects){
+                if (button.getText() == "U3"){
+                    button.setActiveFlag();
+                }
+            }
+        }
     }
 }
