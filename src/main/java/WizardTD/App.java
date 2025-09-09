@@ -508,5 +508,17 @@ public static final int CELLSIZE = 32;
                 }
             }
         }
+
+        //upgrade tower speed
+        if (this.keyCode == 50){
+            upgradeSpeed = !upgradeSpeed;
+
+            //changes button yellow
+            for (Button button : buttonObjects){
+                if (button.getText() == "U2"){
+                    button.setActiveFlag();
+                }
+            }
+        }
     }
 }
