@@ -532,5 +532,24 @@ public static final int CELLSIZE = 32;
                 }
             }
         }
+
+        //mana spell
+        if (this.keyCode == 77){
+
+            if (this.mana >= this.manaSpellCost){
+                this.mana -= this.manaSpellCost; //deducts cost
+                this.manaCap *= (int) this.manaSpellCapMultiplier; //increases mana cap
+                this.manaKillMultiplier *= this.manaSpellGainedMultiplier; //increases mana from killing monsters
+                this.manaPerSecond *= (int) this.manaSpellGainedMultiplier; //increases mana trickle
+                this.manaSpellCost += this.manaSpellCostIncrease; //increases spell cost
+            }
+            
+            //changes button yellow
+            for (Button button : buttonObjects){
+                if (button.getText() == "M"){
+                    button.setActiveFlag();
+                }
+            }
+        }
     }
 }
