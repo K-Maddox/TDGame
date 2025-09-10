@@ -575,4 +575,21 @@ public static final int CELLSIZE = 32;
             setup(); //resets to initial conditions
         }
     }
+
+    /**
+     * Receive key released signal from the keyboard.
+     */
+	@Override
+    public void keyReleased(){
+        //mana spell
+        if (this.keyCode == 77){
+            
+            //changes button yellow
+            for (Button button : buttonObjects){
+                if (button.getText() == "M"){
+                    button.setActiveFlag();
+                }
+            }
+        }
+    }
 }
