@@ -551,5 +551,28 @@ public static final int CELLSIZE = 32;
                 }
             }
         }
+
+        //restart game
+        if (this.keyCode == 82 && gameOver){
+            
+            System.out.println("Restarting game...");
+
+            //restarts all settings
+            allObjects.clear();
+            spawnPoints.clear();
+            allPaths.clear();
+            buttonObjects.clear();
+            waveObjects.clear();
+            allFireballs.clear();
+            allMonsters.clear();
+            fastForward = false;
+            pause = false;
+            gameOver = false;
+            towerActive = false;
+            upgradeRange = false;
+            upgradeSpeed = false;
+            upgradeDamage = false;
+            setup(); //resets to initial conditions
+        }
     }
 }
