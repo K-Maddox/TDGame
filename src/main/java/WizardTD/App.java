@@ -636,6 +636,13 @@ public static final int CELLSIZE = 32;
                         towerActive = !towerActive;
                         return;
                     }
+
+                    //upgrade tower range
+                    if (button.getText() == "U1"){
+                        button.setActiveFlag();
+                        upgradeRange = !upgradeRange;
+                        return;
+                    }
                 }
             }
         }
