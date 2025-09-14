@@ -615,6 +615,20 @@ public static final int CELLSIZE = 32;
                             }
                         } return;
                     }
+
+                    //pause
+                    if (button.getText() == "P"){
+                        fastForward = false;
+                        pause = !pause;
+                        button.setActiveFlag();
+
+                        //turns off ff button
+                        for (Button button2 : buttonObjects){
+                            if (button2.getText() == "FF" && button2.getActiveFlag()){
+                                button2.setActiveFlag();
+                            }
+                        } return;
+                    }
                 }
             }
         }
