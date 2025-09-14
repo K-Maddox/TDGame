@@ -629,6 +629,13 @@ public static final int CELLSIZE = 32;
                             }
                         } return;
                     }
+
+                    //activate tower
+                    if (button.getText() == "T" && !pause){
+                        button.setActiveFlag();
+                        towerActive = !towerActive;
+                        return;
+                    }
                 }
             }
         }
