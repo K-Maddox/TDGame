@@ -592,4 +592,31 @@ public static final int CELLSIZE = 32;
             }
         }
     }
+
+    /**
+     * Check if button is pressed
+     */
+    @Override
+    public void mousePressed(MouseEvent e) {
+        if (e.getAction() == MouseEvent.PRESS){
+            for (Button button : buttonObjects){
+                if (button.isClicked(e.getX(), e.getY())){
+                    
+                    //fast foward
+                    if (button.getText() == "FF"){
+                        pause = false;
+                        fastForward = !fastForward;
+                        button.setActiveFlag();
+                        
+                        //turns off p button
+                        for (Button button2 : buttonObjects){
+                            if (button2.getText() == "P" && button2.getActiveFlag()){
+                                button2.setActiveFlag();
+                            }
+                        } return;
+                    }
+                }
+            }
+        }
+    }
 }
