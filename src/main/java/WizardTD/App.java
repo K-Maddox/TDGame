@@ -643,6 +643,13 @@ public static final int CELLSIZE = 32;
                         upgradeRange = !upgradeRange;
                         return;
                     }
+
+                    //upgrade tower speed
+                    if (button.getText() == "U2"){
+                        button.setActiveFlag();
+                        upgradeSpeed = !upgradeSpeed;
+                        return;
+                    }
                 }
             }
         }
