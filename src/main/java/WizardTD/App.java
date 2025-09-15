@@ -650,6 +650,13 @@ public static final int CELLSIZE = 32;
                         upgradeSpeed = !upgradeSpeed;
                         return;
                     }
+
+                    //upgrade tower damage
+                    if (button.getText() == "U3"){
+                        button.setActiveFlag();
+                        upgradeDamage = !upgradeDamage;
+                        return;
+                    }
                 }
             }
         }
