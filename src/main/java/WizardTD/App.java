@@ -657,6 +657,19 @@ public static final int CELLSIZE = 32;
                         upgradeDamage = !upgradeDamage;
                         return;
                     }
+
+                    //mana spell
+                    if (button.getText() == "M"){
+                        button.setActiveFlag();
+                        if (this.mana >= this.manaSpellCost){
+                            this.mana -= this.manaSpellCost; //deducts cost
+                            this.manaCap *= (int) this.manaSpellCapMultiplier; //increases mana cap
+                            this.manaKillMultiplier *= this.manaSpellCapMultiplier; //increases mana from killing monsters
+                            this.manaPerSecond *= (int) this.manaSpellCapMultiplier; //increases mana trickle
+                            this.manaSpellCost += this.manaSpellCostIncrease; //increases spell cost
+                        }
+                        return;
+                    }
                 }
             }
         }
