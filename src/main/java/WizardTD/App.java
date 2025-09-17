@@ -688,6 +688,32 @@ public static final int CELLSIZE = 32;
                         }
                     return;
                 }
+
+                //error check other objects
+                for (GameObject object : allObjects){
+                    
+                    if (object instanceof WizardHouse || object instanceof Shrub || object instanceof Tower || object instanceof Path){
+                        int objectLeft = object.getX();
+                        int objectRight = object.getX() + object.getWidth();
+                        int objectTop = object.getY();
+                        int objectBottom = object.getY() + object.getHeight();
+                        int currentRight = e.getX() + this.tower0Image.width/2;
+                        int currentBottom = e.getY() + this.tower0Image.height/2;
+
+                        if (currentRight > objectLeft && e.getX() < objectRight && currentBottom > objectTop && e.getY() < objectBottom){
+                            towerActive = false;
+                            
+                            //turns off t button
+                            for (Button button : buttonObjects){
+                                if (button.getText() == "T"){
+                                    button.setActiveFlag();
+                                }
+                            }
+                            return;
+                        }
+                    }
+                }
+
             }
         }
     }
