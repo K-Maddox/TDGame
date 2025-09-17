@@ -714,6 +714,27 @@ public static final int CELLSIZE = 32;
                     }
                 }
 
+                //create tower
+                if (mana >= towerCost){
+                    allObjects.add(this.tower0 = new Tower(e.getX() - this.tower0Image.width/2, e.getY() - this.tower0Image.height/2, tower0Image, towerRange, towerFiringSpeed, towerDamage, towerCost));
+                    towerActive = false;
+                    mana = mana - towerCost;
+
+                    //turns off t button
+                    for (Button button : buttonObjects){
+                        if (button.getText() == "T"){
+                            button.setActiveFlag();
+                        }
+                    }
+                } else {
+
+                    //turns off t button
+                    for (Button button : buttonObjects){
+                        if (button.getText() == "T"){
+                            button.setActiveFlag();
+                        }
+                    }
+                }
             }
         }
     }
