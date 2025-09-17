@@ -672,6 +672,23 @@ public static final int CELLSIZE = 32;
                     }
                 }
             }
+
+            //drop tower on map
+            if (towerActive){
+                
+                //error check bounds
+                if (e.getX() > WIDTH - SIDEBAR || e.getY() < TOPBAR){
+                    towerActive = false;
+
+                    //turns off t button
+                    for (Button button : buttonObjects){
+                        if (button.getText() == "T"){
+                            button.setActiveFlag();
+                            }
+                        }
+                    return;
+                }
+            }
         }
     }
 }
