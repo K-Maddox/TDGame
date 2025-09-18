@@ -786,4 +786,13 @@ public static final int CELLSIZE = 32;
             }
         }
     }
+
+    /**
+     * Draw all elements in the game by current frame.
+     */
+	@Override
+    public void draw() {
+        // main loop here
+
+    }
 }
