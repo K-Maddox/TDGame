@@ -755,6 +755,19 @@ public static final int CELLSIZE = 32;
                                 }
                             }
                         }
+                        
+                        if (upgradeSpeed && this.mana >= object.getSpeedCost()){
+                            this.mana -= object.getSpeedCost();
+                            object.increaseFiringSpeed();
+                            upgradeSpeed = !upgradeSpeed;
+
+                            //turns off U2 button
+                            for (Button button : buttonObjects){
+                                if (button.getText() == "U2"){
+                                    button.setActiveFlag();
+                                }
+                            }
+                        }
                     }
                 }
             }
