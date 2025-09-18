@@ -768,6 +768,19 @@ public static final int CELLSIZE = 32;
                                 }
                             }
                         }
+
+                    if (upgradeDamage && this.mana >= object.getDamageCost()){
+                            this.mana -= object.getDamageCost();
+                            object.increaseDamage();
+                            upgradeDamage = !upgradeDamage;
+
+                            //turns off U3 button
+                            for (Button button : buttonObjects){
+                                if (button.getText() == "U3"){
+                                    button.setActiveFlag();
+                                }
+                            }
+                        }
                     }
                 }
             }
