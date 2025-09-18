@@ -736,6 +736,28 @@ public static final int CELLSIZE = 32;
                     }
                 }
             }
+
+            //upgrade tower
+            for (GameObject object : allObjects){
+                if (object instanceof Tower){
+                    if (mouseX >= object.getX() && mouseX <= object.getX() + object.getWidth() && mouseY >= object.getY() && mouseY <= object.getY() + object.getHeight()){
+
+                        //implement upgrade
+                        if (upgradeRange && this.mana >= object.getRangeCost()){
+                            this.mana -= object.getRangeCost();
+                            object.increaseRange();
+                            upgradeRange = !upgradeRange;
+
+                            //turns off U1 button
+                            for (Button button : buttonObjects){
+                                if (button.getText() == "U1"){
+                                    button.setActiveFlag();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
