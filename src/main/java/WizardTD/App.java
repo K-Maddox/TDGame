@@ -794,5 +794,14 @@ public static final int CELLSIZE = 32;
     public void draw() {
         // main loop here
 
+        // call tick method for all movable objects
+        if (gameOver){
+            //negates time controls below
+            this.timer++;
+            this.monsterCount++;
+            this.waveTotal++;
+            this.manaCount++;
+        }
+
     }
 }
