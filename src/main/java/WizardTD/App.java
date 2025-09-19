@@ -803,5 +803,13 @@ public static final int CELLSIZE = 32;
             this.manaCount++;
         }
 
+        else if (pause){
+            //negates time controls below
+            this.timer++;
+            this.monsterCount++;
+            this.waveTotal++;
+            this.manaCount++;
+        }
+
     }
 }
