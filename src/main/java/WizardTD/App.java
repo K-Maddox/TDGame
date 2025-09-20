@@ -833,5 +833,17 @@ public static final int CELLSIZE = 32;
             }
         }
 
+        else {
+            for (GameObject obj : allObjects){
+                obj.tick();
+            }
+            for (Monster mon : allMonsters){
+                mon.tick();
+            }
+            for (Fireball fire : allFireballs){
+                fire.tick();
+            }
+        }
+
     }
 }
