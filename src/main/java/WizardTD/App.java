@@ -811,5 +811,27 @@ public static final int CELLSIZE = 32;
             this.manaCount++;
         }
 
+        else if (fastForward){
+            //double time controls
+            this.timer--;
+            this.monsterCount--;
+            this.waveTotal--;
+            this.manaCount--;
+
+            //calls tick twice
+            for (GameObject obj : allObjects){
+                obj.tick();
+                obj.tick();
+            }
+            for (Monster mon : allMonsters){
+                mon.tick();
+                mon.tick();
+            }
+            for (Fireball fire : allFireballs){
+                fire.tick();
+                fire.tick();
+            }
+        }
+
     }
 }
