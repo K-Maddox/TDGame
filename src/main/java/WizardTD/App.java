@@ -845,5 +845,10 @@ public static final int CELLSIZE = 32;
             }
         }
 
+        //draw all objects onto screen
+        this.rect(-1, -1, WIDTH + 2, HEIGHT + 2);
+
+        //sets background colour
+        background(180, 140, 100);
     }
 }
