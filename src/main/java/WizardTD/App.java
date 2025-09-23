@@ -871,6 +871,14 @@ public static final int CELLSIZE = 32;
                 fill(192, 192, 192);
                 rect(button.getX(), button.getY(), button.getWidth(), button.getHeight());
             }
+
+            //draw other text boxes
+            textSize(button.getTextSize());
+            textAlign(button.getTextAlign(), CENTER);
+            fill(button.getColour());
+            text(button.getText(), button.getX() + button.getWidth()/2, button.getY() + button.getHeight()/2);
+
+            
         }
     }
 }
