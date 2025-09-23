@@ -888,6 +888,32 @@ public static final int CELLSIZE = 32;
             if (button.getManaSpellFlag()){
                 button.setText("Mana pool\ncost: " + this.manaSpellCost);
             }
+
+            if (button.getManaFlag()){
+                if (mana > 0 && mana <= manaCap){
+                    //fill total bar
+                    fill(255,255,255);
+                    rect(button.getX(), button.getY(), button.getWidth(), button.getHeight());
+                    
+                    //fill mana available
+                    fill(0, 153, 255);
+                    rect(button.getX(), button.getY(), button.getWidth()/(manaCap / mana), button.getHeight());
+                    
+                    //add text
+                    button.setText(mana  + " / " + manaCap);
+                    fill(button.getColour());
+                    text(button.getText(), button.getX() + button.getWidth()/2, button.getY() + button.getHeight()/2);
+                } else {
+                    //fill total bar
+                    fill(255,255,255);
+                    rect(button.getX(), button.getY(), button.getWidth(), button.getHeight());
+                    
+                    //add text
+                    button.setText(mana  + " / " + manaCap);
+                    fill(button.getColour());
+                    text(button.getText(), button.getX() + button.getWidth()/2, button.getY() + button.getHeight()/2);
+                }
+            }
         }
     }
 }
