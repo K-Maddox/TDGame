@@ -878,7 +878,16 @@ public static final int CELLSIZE = 32;
             fill(button.getColour());
             text(button.getText(), button.getX() + button.getWidth()/2, button.getY() + button.getHeight()/2);
 
-            
+            //update dynamic buttons
+            if (button.getWaveFlag() && waveCount < waveObjects.size()){
+                button.setText("Wave: " + (waveCount + 2) + " starts: " + (int) waveTotal/FPS);
+            }
+            if (button.getWaveFlag() && waveCount + 2 > waveObjects.size()){
+                button.setText("");
+            }
+            if (button.getManaSpellFlag()){
+                button.setText("Mana pool\ncost: " + this.manaSpellCost);
+            }
         }
     }
 }
