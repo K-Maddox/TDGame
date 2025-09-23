@@ -850,5 +850,27 @@ public static final int CELLSIZE = 32;
 
         //sets background colour
         background(180, 140, 100);
+
+        //draw buttons
+        for (Button button : buttonObjects){
+            
+            //draws box brown if not clicked
+            if (button.getFlag() && !(button.getActiveFlag())){
+                fill(180, 140, 100);
+                rect(button.getX(), button.getY(), button.getWidth(), button.getHeight());
+            }
+
+            //draws box yellow if clicked
+            if (button.getFlag() && button.getActiveFlag()){
+                fill(255, 255, 0);
+                rect(button.getX(), button.getY(), button.getWidth(), button.getHeight());
+            }
+
+            //draws box grey if hovered over
+            if (button.getFlag() && button.isClicked(mouseX, mouseY) && !(button.getActiveFlag()) && !(button.getManaFlag())){
+                fill(192, 192, 192);
+                rect(button.getX(), button.getY(), button.getWidth(), button.getHeight());
+            }
+        }
     }
 }
