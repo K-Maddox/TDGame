@@ -1041,6 +1041,13 @@ public static final int CELLSIZE = 32;
                     popStyle();
                 }
             }
+            //change sprite
+            if (object.getIncreaseRangeCount() >= 1 && object.getIncreaseSpeedCount() >= 1 && object.getIncreaseDamageCount() >= 1){
+                object.setSprite(this.tower1Image);
+            }
+            if (object.getIncreaseRangeCount() >= 2 && object.getIncreaseSpeedCount() >= 2 && object.getIncreaseDamageCount() >= 2){
+                object.setSprite(this.tower2Image);
+            }
         }
     }
 }
