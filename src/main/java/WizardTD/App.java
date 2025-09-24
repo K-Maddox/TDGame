@@ -922,5 +922,23 @@ public static final int CELLSIZE = 32;
 
         //draw wizard house last
         wizardHouse.draw(this);
+
+        //draw game over display
+        if (gameOver && this.mana > 0){
+            pushStyle();
+            textSize(32);
+            fill(0, 0, 0);
+            textAlign(CENTER, CENTER);
+            text("YOU WIN\nPress 'r' to restart", WIDTH/2, HEIGHT/2);
+            popStyle();
+        } if (gameOver && this.mana == 0){
+            pushStyle();
+            textSize(32);
+            fill(0, 0, 0);
+            textAlign(CENTER, CENTER);
+            text("YOU LOST\nPress 'r' to restart", WIDTH/2, HEIGHT/2);
+            popStyle();
+        }
+
     }
 }
