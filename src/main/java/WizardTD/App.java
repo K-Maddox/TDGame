@@ -915,5 +915,12 @@ public static final int CELLSIZE = 32;
                 }
             }
         }
+        //draw game objects
+        for (GameObject object : allObjects){
+            object.draw(this);
+        }
+
+        //draw wizard house last
+        wizardHouse.draw(this);
     }
 }
