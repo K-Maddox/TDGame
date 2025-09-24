@@ -940,5 +940,26 @@ public static final int CELLSIZE = 32;
             popStyle();
         }
 
+        //draws cost boxes if hovered over
+        for (Button button : buttonObjects){
+            if (button.getHoverFlagTower() && button.isClicked(mouseX, mouseY) && !gameOver){
+                Button toolKit = new Button(585, 170, 60, 20, 12, LEFT, "Cost: ", true);
+                fill(255, 255, 255);
+                rect(toolKit.getX(), toolKit.getY(), toolKit.getWidth(), toolKit.getHeight());
+                
+                toolKit.setText("Cost: " + this.towerCost);
+                fill(toolKit.getColour());
+                text(toolKit.getText(), toolKit.getX() + toolKit.getWidth(), toolKit.getY() + toolKit.getHeight()/2);
+            }
+            if (button.getHoverFlagMana() && button.isClicked(mouseX, mouseY) && !gameOver){
+                Button toolKit = new Button(585, 410, 60, 20, 12, LEFT, "Cost: ", true);
+                fill(255, 255, 255);
+                rect(toolKit.getX(), toolKit.getY(), toolKit.getWidth(), toolKit.getHeight());
+                
+                toolKit.setText("Cost: " + this.manaSpellCost);
+                fill(toolKit.getColour());
+                text(toolKit.getText(), toolKit.getX() + toolKit.getWidth(), toolKit.getY() + toolKit.getHeight()/2);
+            }
+        }
     }
 }
