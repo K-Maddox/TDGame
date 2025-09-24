@@ -993,7 +993,53 @@ public static final int CELLSIZE = 32;
                     ellipse(object.getX() + 14, object.getY() + 3, 5, 5);
                     popStyle();
                 }
-                
+                //draw speed indicators
+                if (object.getIncreaseSpeedCount() == 1){
+                    pushStyle();
+                    stroke(70, 130, 180);
+                    strokeWeight(2);
+                    noFill();
+                    rect(object.getX() + 7, object.getY() + 7, object.getWidth()/2, object.getHeight()/2);
+                    popStyle();
+                }
+                if (object.getIncreaseSpeedCount() == 2){
+                    pushStyle();
+                    stroke(70, 130, 180);
+                    strokeWeight(4);
+                    noFill();
+                    rect(object.getX() + 7, object.getY() + 7, object.getWidth()/2, object.getHeight()/2);
+                    popStyle();
+                }
+                if (object.getIncreaseSpeedCount() == 3){
+                    pushStyle();
+                    stroke(70, 130, 180);
+                    strokeWeight(6);
+                    noFill();
+                    rect(object.getX() + 7, object.getY() + 7, object.getWidth()/2, object.getHeight()/2);
+                    popStyle();
+                }
+                //draw damage indicators
+                if (object.getIncreaseDamageCount() == 1){
+                    pushStyle();
+                    fill(255, 0, 255);
+                    text("x", object.getX() + 2, object.getY() + object.getHeight() - 5);
+                    popStyle();
+                }
+                if (object.getIncreaseDamageCount() == 2){
+                    pushStyle();
+                    fill(255, 0, 255);
+                    text("x", object.getX() + 2, object.getY() + object.getHeight() - 5);
+                    text("x", object.getX() + 8, object.getY() + object.getHeight() - 5);
+                    popStyle();
+                }
+                if (object.getIncreaseDamageCount() == 3){
+                    pushStyle();
+                    fill(255, 0, 255);
+                    text("x", object.getX() + 2, object.getY() + object.getHeight() - 5);
+                    text("x", object.getX() + 8, object.getY() + object.getHeight() - 5);
+                    text("x", object.getX() + 14, object.getY() + object.getHeight() - 5);
+                    popStyle();
+                }
             }
         }
     }
