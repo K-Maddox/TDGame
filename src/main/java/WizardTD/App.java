@@ -961,5 +961,40 @@ public static final int CELLSIZE = 32;
                 text(toolKit.getText(), toolKit.getX() + toolKit.getWidth(), toolKit.getY() + toolKit.getHeight()/2);
             }
         }
+
+        //draw correct tower sprite
+        for (GameObject object : allObjects){
+            if (object instanceof Tower){
+                //draw range indicators
+                if (object.getIncreaseRangeCount() == 1){
+                    pushStyle();
+                    stroke(255, 0, 255);
+                    strokeWeight(2);
+                    noFill();
+                    ellipse(object.getX() + 2, object.getY() + 3, 5, 5);
+                    popStyle();
+                }
+                if (object.getIncreaseRangeCount() == 2){
+                    pushStyle();
+                    stroke(255, 0, 255);
+                    strokeWeight(2);
+                    noFill();
+                    ellipse(object.getX(), object.getY() + 3, 5, 5);
+                    ellipse(object.getX() + 8, object.getY() + 3, 5, 5);
+                    popStyle();
+                }
+                if (object.getIncreaseRangeCount() == 3){
+                    pushStyle();
+                    stroke(255, 0, 255);
+                    strokeWeight(2);
+                    noFill();
+                    ellipse(object.getX(), object.getY() + 3, 5, 5);
+                    ellipse(object.getX() + 8, object.getY() + 3, 5, 5);
+                    ellipse(object.getX() + 14, object.getY() + 3, 5, 5);
+                    popStyle();
+                }
+                
+            }
+        }
     }
 }
