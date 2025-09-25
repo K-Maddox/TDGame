@@ -13,6 +13,7 @@ import java.awt.image.BufferedImage;
 
 import java.io.*;
 import java.nio.file.Path;
+import java.nio.file.Path;
 import java.util.*;
 
 public class App extends PApplet {
@@ -1040,13 +1041,57 @@ public static final int CELLSIZE = 32;
                     text("x", object.getX() + 14, object.getY() + object.getHeight() - 5);
                     popStyle();
                 }
+                //change sprite
+                if (object.getIncreaseRangeCount() >= 1 && object.getIncreaseSpeedCount() >= 1 && object.getIncreaseDamageCount() >= 1){
+                    object.setSprite(this.tower1Image);
+                }
+                if (object.getIncreaseRangeCount() >= 2 && object.getIncreaseSpeedCount() >= 2 && object.getIncreaseDamageCount() >= 2){
+                    object.setSprite(this.tower2Image);
+                }
             }
-            //change sprite
-            if (object.getIncreaseRangeCount() >= 1 && object.getIncreaseSpeedCount() >= 1 && object.getIncreaseDamageCount() >= 1){
-                object.setSprite(this.tower1Image);
-            }
-            if (object.getIncreaseRangeCount() >= 2 && object.getIncreaseSpeedCount() >= 2 && object.getIncreaseDamageCount() >= 2){
-                object.setSprite(this.tower2Image);
+        }
+
+        //draw tower radius if hovered over and upgrade cost box
+        for (GameObject object : allObjects){
+            if (object instanceof Tower){
+                if (mouseX >= object.getX() && mouseX <= object.getX() + object.getWidth() && mouseY >= object.getY() && mouseY <= object.getY() + object.getHeight()){
+                    //tower radius
+                    pushStyle();
+                    stroke(255, 255, 0);
+                    strokeWeight(1);
+                    noFill();
+                    ellipse(object.getX() + object.getWidth()/2, object.getY() + object.getHeight()/2, object.getRange(), object.getRange());
+                    popStyle();
+
+                    //upgrade selections
+                    Button upgradeHeading = new Button(660, 560, 80, 20, 8, LEFT, "Upgrade cost", true);
+                    pushStyle();
+                    fill(255, 255, 255);
+                    rect(upgradeHeading.getX(), upgradeHeading.getY(), upgradeHeading.getWidth(), upgradeHeading.getHeight());
+                    fill(upgradeHeading.getColour());
+                    text(upgradeHeading.getText(), upgradeHeading.getX() + upgradeHeading.getWidth(), upgradeHeading.getY() + upgradeHeading.getHeight()/2);
+                    popStyle();
+
+                    Button upgradeDetail = new Button(660, 580, 80, 60, 8, LEFT, null, true);
+                    pushStyle();
+                    fill(255, 255, 255);
+                    rect(upgradeDetail.getX(), upgradeDetail.getY(), upgradeDetail.getWidth(), upgradeDetail.getHeight());
+                    
+                    upgradeDetail.setText("range: " + object.getRangeCost() + "\nspeed : " + object.getSpeedCost() + "\ndamage:" + object.getDamageCost());
+                    fill(upgradeDetail.getColour());
+                    text(upgradeDetail.getText(), upgradeDetail.getX() + upgradeDetail.getWidth(), upgradeDetail.getY() + upgradeDetail.getHeight()/2);
+                    popStyle();
+
+                    Button upgradeTotal = new Button(660, 640, 80, 20, 8, LEFT, null, true);
+                    pushStyle();
+                    fill(255, 255, 255);
+                    rect(upgradeTotal.getX(), upgradeTotal.getY(), upgradeTotal.getWidth(), upgradeTotal.getHeight());
+                    
+                    upgradeTotal.setText("Total: " + (object.getRangeCost() + object.getSpeedCost() + object.getDamageCost()));
+                    fill(upgradeTotal.getColour());
+                    text(upgradeTotal.getText(), upgradeTotal.getX() + upgradeTotal.getWidth(), upgradeTotal.getY() + upgradeTotal.getHeight()/2);
+                    popStyle();
+                }
             }
         }
     }
