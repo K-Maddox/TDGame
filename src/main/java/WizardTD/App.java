@@ -1094,5 +1094,12 @@ public static final int CELLSIZE = 32;
                 }
             }
         }
+
+        //draws monsters
+        for (Monster mon : allMonsters){
+            if (mon.isAlive()){
+                mon.draw(this);
+            }
+        }
     }
 }
