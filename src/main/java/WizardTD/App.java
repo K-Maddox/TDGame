@@ -1100,6 +1100,23 @@ public static final int CELLSIZE = 32;
             if (mon.isAlive()){
                 mon.draw(this);
             }
+            //draw death animation
+            if (mon.getDeathSequence()){
+                if (mon.getTimer() <= 4)
+                    image(this.gremlin1Image, mon.getX(), mon.getY());
+                if (mon.getTimer() > 4 && mon.getTimer() <= 8){
+                    image(this.gremlin2Image, mon.getX(), mon.getY());
+                }
+                if (mon.getTimer() > 8 && mon.getTimer() <= 12){
+                    image(this.gremlin3Image, mon.getX(), mon.getY());
+                }
+                if (mon.getTimer() > 12 && mon.getTimer() <= 16){
+                    image(this.gremlin4Image, mon.getX(), mon.getY());
+                }
+                if (mon.getTimer() > 16){
+                    image(this.gremlin5Image, mon.getX(), mon.getY());
+                }
+            }
         }
     }
 }
