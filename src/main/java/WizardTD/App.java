@@ -1118,5 +1118,13 @@ public static final int CELLSIZE = 32;
                 }
             }
         }
+
+        //draws fireballs
+        for (Fireball fire : allFireballs){
+            fire.targetCheck();
+            if (fire.isAlive()){
+                fire.draw(this);
+            }
+        }
     }
 }
