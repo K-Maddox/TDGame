@@ -1148,6 +1148,23 @@ public static final int CELLSIZE = 32;
         monsterCount--;
         if (monsterCount < 0 && !pause && quantity > 0){
 
+            //find starting positions and spawn randomly
+            if (!spawnPoints.isEmpty()){
+                Random random = new Random();
+                int randomIndex = random.nextInt(spawnPoints.size());
+                GameObject obj = spawnPoints.get(randomIndex);
+                
+                //match wave monster attributes
+                if (wave.getMonster().equalsIgnoreCase("gremlin")){
+                    allMonsters.add(this.gremlin = new Monster(obj.getX(), obj.getY(), gremlinImage, wizardHouse, wave.getHp(), wave.getSpeed(), wave.getArmour(), wave.getManaGained(), allPaths));
+                }
+                if (wave.getMonster().equalsIgnoreCase("beetle")){
+                    allMonsters.add(this.beetle = new Monster(obj.getX(), obj.getY(), beetleImage, wizardHouse, wave.getHp(), wave.getSpeed(), wave.getArmour(), wave.getManaGained(), allPaths));
+                }
+                if (wave.getMonster().equalsIgnoreCase("worm")){
+                    allMonsters.add(this.worm = new Monster(obj.getX(), obj.getY(), wormImage, wizardHouse, wave.getHp(), wave.getSpeed(), wave.getArmour(), wave.getManaGained(), allPaths));
+                }
+            }
             monsterCount = releaseRate;
             quantity--;
         }
