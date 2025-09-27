@@ -1126,5 +1126,21 @@ public static final int CELLSIZE = 32;
                 fire.draw(this);
             }
         }
+
+        //draws monster health bars
+        for (Monster monster : allMonsters){
+            if (monster.isAlive()){
+                Button healthBar = new Button(monster.getX(), monster.getY(), monster.sprite.width, 2, 12, LEFT, null, true);
+                //fill total bar
+                fill(255, 0, 0);
+                rect(healthBar.getX(), healthBar.getY() - 5, healthBar.getWidth(), healthBar.getHeight());
+
+                if (monster.getHp() > 0){
+                    //fill health available
+                    fill(0, 255, 0);
+                    rect(healthBar.getX(), healthBar.getY() - 5, healthBar.getWidth() * monster.getHp() / monster.getStartHp(), healthBar.getHeight());
+                }
+            }
+        }
     }
 }
