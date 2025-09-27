@@ -14,6 +14,7 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Path;
+import java.nio.file.Path;
 import java.util.*;
 
 public class App extends PApplet {
@@ -1141,6 +1142,14 @@ public static final int CELLSIZE = 32;
                     rect(healthBar.getX(), healthBar.getY() - 5, healthBar.getWidth() * monster.getHp() / monster.getStartHp(), healthBar.getHeight());
                 }
             }
+        }
+
+        //spawn monsters
+        monsterCount--;
+        if (monsterCount < 0 && !pause && quantity > 0){
+
+            monsterCount = releaseRate;
+            quantity--;
         }
     }
 }
