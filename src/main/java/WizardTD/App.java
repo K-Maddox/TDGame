@@ -1201,5 +1201,20 @@ public static final int CELLSIZE = 32;
                 }
             }
         }
+
+        //checks for monster/fireball collisions
+        for (Monster obj : allMonsters){
+            boolean fireballCollision = obj.checkFireballCollision(allFireballs);
+            
+            if (fireballCollision){
+                if (!obj.isAlive()){
+                    if ((this.mana + obj.getManaGained() * (int) this.manaKillMultiplier) <= this.manaCap){
+                        this.mana += (obj.getManaGained() * (int) this.manaKillMultiplier);
+                    } else {
+                        this.mana = this.manaCap;
+                    }
+                }
+            }
+        }
     }
 }
