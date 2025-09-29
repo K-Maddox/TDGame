@@ -1182,6 +1182,23 @@ public static final int CELLSIZE = 32;
                         obj.resetTimer();
                     }
                 }
+                if (obj instanceof WizardHouse){
+                    if (this.mana > obj.getTarget().getHp()){
+                        this.mana -= obj.getTarget().getHp();
+                        //monster banished and respawned
+                        obj.getTarget().banish();
+                        if (!spawnPoints.isEmpty()){
+                            Random random = new Random();
+                            int randomIndex = random.nextInt(spawnPoints.size());
+                            GameObject path = spawnPoints.get(randomIndex);
+                            //match monster attributes
+                            allMonsters.add(this.gremlin = new Monster(path.getX(), path.getY(), obj.getTarget().getSprite(), wizardHouse, obj.getTarget().getHp(), obj.getTarget().getSpeed(), obj.getTarget().getArmour(), obj.getTarget().getManaGained(), allPaths));
+                        }
+                    } else {
+                        this.mana = 0;
+                        gameOver = true;
+                    }
+                }
             }
         }
     }
