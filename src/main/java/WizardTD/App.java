@@ -15,6 +15,7 @@ import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Path;
 import java.nio.file.Path;
+import java.nio.file.Path;
 import java.util.*;
 
 public class App extends PApplet {
@@ -1167,6 +1168,21 @@ public static final int CELLSIZE = 32;
             }
             monsterCount = releaseRate;
             quantity--;
+        }
+
+        //checks for tower range/monster collisions and monster/wizard house collisions
+        for (GameObject obj : allObjects){
+            boolean collision = obj.checkCollision(allMonsters);
+
+            if (collision){
+                if (obj instanceof Tower){
+                    if (obj.towerActive()){
+                        //tower shoots fireball
+                        allFireballs.add(fireball = new Fireball(obj.getX(), obj.getY(), fireballImage, obj.getDamage(), obj.getTarget()));
+                        obj.resetTimer();
+                    }
+                }
+            }
         }
     }
 }
