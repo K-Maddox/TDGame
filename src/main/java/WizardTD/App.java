@@ -1227,5 +1227,36 @@ public static final int CELLSIZE = 32;
             }
             manaCount = FPS;
         }
+
+        //resets timer for each wave
+        this.timer --;
+        this.waveTotal--;
+
+        if (timer < 0){
+
+            if (waveCount < waveObjects.size() - 1){
+
+                //resets clock
+                if (!waveComplete){
+                    timer = wave.getDuration()*FPS;
+                    waveComplete = !waveComplete;
+                }
+                
+            }
+            else{
+                //checks if player has won once waves complete
+                if (this.mana > 0 && this.quantity == 0){
+                    int count = 0;
+                    for (Monster monster : allMonsters){
+                        if (monster.isAlive()){
+                            count++;
+                        }
+                    }
+                    if (count == 0){
+                        gameOver = true;
+                    }
+                }
+            }
+        }
     }
 }
