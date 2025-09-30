@@ -1241,7 +1241,20 @@ public static final int CELLSIZE = 32;
                     timer = wave.getDuration()*FPS;
                     waveComplete = !waveComplete;
                 }
-                
+                else {
+                    //sets up next wave
+                    waveCount++;
+                    wave = waveObjects.get(waveCount);
+                    duration = wave.getDuration();
+                    preWavePause = wave.getPreWavePause();
+                    quantity = wave.getQuantity();
+                    waveTotal = FPS*(duration + preWavePause);
+                    releaseRate = FPS * duration / quantity;
+                    monsterCount = releaseRate;
+                    fireBallCount = towerFiringSpeed*FPS;
+                    timer = (int)preWavePause * FPS;
+                    waveComplete = !waveComplete;
+                }
             }
             else{
                 //checks if player has won once waves complete
