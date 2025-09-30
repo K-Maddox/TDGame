@@ -16,6 +16,7 @@ import java.nio.file.Path;
 import java.nio.file.Path;
 import java.nio.file.Path;
 import java.nio.file.Path;
+import java.nio.file.Path;
 import java.util.*;
 
 public class App extends PApplet {
@@ -1215,6 +1216,16 @@ public static final int CELLSIZE = 32;
                     }
                 }
             }
+        }
+
+        //add mana trickle
+        manaCount--;
+        if (manaCount < 0 && !pause){
+            
+            if (mana < manaCap){
+                mana += manaPerSecond;
+            }
+            manaCount = FPS;
         }
     }
 }
