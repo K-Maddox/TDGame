@@ -1293,6 +1293,26 @@ public static final int CELLSIZE = 32;
         int newWidth = (int) Math.floor(w * cos + h * sin);
         int newHeight = (int) Math.floor(h * cos + w * sin);
 
+        PImage result = this.createImage(newWidth, newHeight, ARGB);
+        //BufferedImage rotated = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_ARGB);
+        BufferedImage rotated = (BufferedImage) result.getNative();
+        Graphics2D g2d = rotated.createGraphics();
+        AffineTransform at = new AffineTransform();
+        at.translate((newWidth - w) / 2, (newHeight - h) / 2);
+
+        int x = w / 2;
+        int y = h / 2;
+
+        at.rotate(rads, x, y);
+        g2d.setTransform(at);
+        g2d.drawImage(img, 0, 0, null);
+        g2d.dispose();
+        for (int i = 0; i < newWidth; i++) {
+            for (int j = 0; j < newHeight; j++) {
+                result.set(i, j, rotated.getRGB(i, j));
+            }
+        }
+        
         return result;
     }
 }
