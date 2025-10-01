@@ -17,6 +17,7 @@ import java.nio.file.Path;
 import java.nio.file.Path;
 import java.nio.file.Path;
 import java.nio.file.Path;
+import java.nio.file.Path;
 import java.util.*;
 
 public class App extends PApplet {
@@ -1272,4 +1273,9 @@ public static final int CELLSIZE = 32;
             }
         }
     }
+
+    public static void main(String[] args) {
+        PApplet.main("WizardTD.App");
+    }
+
 }
