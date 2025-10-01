@@ -12,17 +12,11 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 
 import java.io.*;
-import java.nio.file.Path;
-import java.nio.file.Path;
-import java.nio.file.Path;
-import java.nio.file.Path;
-import java.nio.file.Path;
-import java.nio.file.Path;
 import java.util.*;
 
 public class App extends PApplet {
 
-public static final int CELLSIZE = 32;
+    public static final int CELLSIZE = 32;
     public static final int SIDEBAR = 120;
     public static final int TOPBAR = 40;
     public static final int BOARD_WIDTH = 20;
@@ -35,6 +29,8 @@ public static final int CELLSIZE = 32;
     public String configPath;
 
     public Random random = new Random();
+	
+	// Feel free to add any additional methods or attributes you want. Please put classes in different files.
 
     public int timer;
 
@@ -62,7 +58,7 @@ public static final int CELLSIZE = 32;
     public PImage tower2Image;
     public PImage wizardHouseImage;
     public PImage wormImage;
-
+    
     //initialise game objects
     public Monster beetle;
     public Monster gremlin;
@@ -96,7 +92,7 @@ public static final int CELLSIZE = 32;
     public boolean fastForward;
     public boolean pause;
     public boolean gameOver;
-
+    
     //monster attributes
     public String type;
     public int hp;
@@ -255,7 +251,7 @@ public static final int CELLSIZE = 32;
         int line2 = 735; //710 second column of text boxes
         boolean box = true;
         boolean noBox = false;
-
+        
         buttonObjects.add(button = new Button(5, 5, 200, 30, largeText, centre, "Wave 2 starts: 9" + duration, noBox, false, false, true, false, false));
         buttonObjects.add(button = new Button(350, 10, 50, 20, largeText, centre, "MANA: ", noBox));
         buttonObjects.add(button = new Button(420, 10, 300, 20, smallText, centre, "Graphic Bar", box, false, false, false, true, false));
@@ -274,14 +270,13 @@ public static final int CELLSIZE = 32;
         buttonObjects.add(button = new Button(line1, 410, edge1, edge1, largeText, right, "M", box, false, true, false, false, false));
         buttonObjects.add(button = new Button(line2, 410, edge2, edge2, smallText, right, "Mana pool\ncost: ", noBox,false, false, false, false, true));
 
-
         //create grass game board
         for (int x = 0; x < WIDTH - SIDEBAR; x += BOARD_WIDTH){
             for (int y = TOPBAR; y < HEIGHT; y += BOARD_WIDTH){
                 allObjects.add(this.grass = new Grass(x, y, grassImage));
             }
         }
-
+        
         //create rest of game board via matrix array
         int numRows = BOARD_WIDTH;
         int numCols = BOARD_WIDTH;
@@ -302,7 +297,7 @@ public static final int CELLSIZE = 32;
         } catch (IOException e){
             e.printStackTrace();
         }
-
+        
         //traverse matrix to print objects
         int x = 0;
         int y = TOPBAR;
@@ -407,7 +402,7 @@ public static final int CELLSIZE = 32;
                         path2ImageRotate = rotateImageByDegrees(path2Image, degrees);
                         allObjects.add(this.path2 = new Path(x, y, path2ImageRotate));
                     }
-
+                    
                     //4 neighbours
                     else if (neighbourUp == 'X' && neighbourDown == 'X' && neighbourRight == 'X'  && neighbourLeft == 'X'){
                         allObjects.add(this.path3 = new Path(x, y, path3Image));
@@ -436,7 +431,6 @@ public static final int CELLSIZE = 32;
                     wizardHouseImage = rotateImageByDegrees(wizardHouseImage, degrees);
                     allObjects.add(this.wizardHouse = new WizardHouse(x, y, wizardHouseImage));
                 }
-
                 x += CELLSIZE;
             }
             x = 0;
@@ -489,7 +483,6 @@ public static final int CELLSIZE = 32;
                 }
             }
         }
-
         //create tower
         if (this.keyCode == 84 && !pause){
             towerActive = !towerActive;
@@ -501,7 +494,6 @@ public static final int CELLSIZE = 32;
                 }
             }
         }
-
         //upgrade tower range
         if (this.keyCode == 49){
             upgradeRange = !upgradeRange;
@@ -513,7 +505,6 @@ public static final int CELLSIZE = 32;
                 }
             }
         }
-
         //upgrade tower speed
         if (this.keyCode == 50){
             upgradeSpeed = !upgradeSpeed;
@@ -525,7 +516,6 @@ public static final int CELLSIZE = 32;
                 }
             }
         }
-
         //upgrade tower damage
         if (this.keyCode == 51){
             upgradeDamage = !upgradeDamage;
@@ -537,7 +527,6 @@ public static final int CELLSIZE = 32;
                 }
             }
         }
-
         //mana spell
         if (this.keyCode == 77){
 
@@ -556,7 +545,6 @@ public static final int CELLSIZE = 32;
                 }
             }
         }
-
         //restart game
         if (this.keyCode == 82 && gameOver){
             
@@ -597,7 +585,7 @@ public static final int CELLSIZE = 32;
             }
         }
     }
-
+    
     /**
      * Check if button is pressed
      */
@@ -620,7 +608,6 @@ public static final int CELLSIZE = 32;
                             }
                         } return;
                     }
-
                     //pause
                     if (button.getText() == "P"){
                         fastForward = false;
@@ -634,35 +621,30 @@ public static final int CELLSIZE = 32;
                             }
                         } return;
                     }
-
                     //activate tower
                     if (button.getText() == "T" && !pause){
                         button.setActiveFlag();
                         towerActive = !towerActive;
                         return;
                     }
-
                     //upgrade tower range
                     if (button.getText() == "U1"){
                         button.setActiveFlag();
                         upgradeRange = !upgradeRange;
                         return;
                     }
-
                     //upgrade tower speed
                     if (button.getText() == "U2"){
                         button.setActiveFlag();
                         upgradeSpeed = !upgradeSpeed;
                         return;
                     }
-
                     //upgrade tower damage
                     if (button.getText() == "U3"){
                         button.setActiveFlag();
                         upgradeDamage = !upgradeDamage;
                         return;
                     }
-
                     //mana spell
                     if (button.getText() == "M"){
                         button.setActiveFlag();
@@ -741,7 +723,7 @@ public static final int CELLSIZE = 32;
                     }
                 }
             }
-
+            
             //upgrade tower
             for (GameObject object : allObjects){
                 if (object instanceof Tower){
@@ -760,7 +742,6 @@ public static final int CELLSIZE = 32;
                                 }
                             }
                         }
-                        
                         if (upgradeSpeed && this.mana >= object.getSpeedCost()){
                             this.mana -= object.getSpeedCost();
                             object.increaseFiringSpeed();
@@ -773,8 +754,7 @@ public static final int CELLSIZE = 32;
                                 }
                             }
                         }
-
-                    if (upgradeDamage && this.mana >= object.getDamageCost()){
+                        if (upgradeDamage && this.mana >= object.getDamageCost()){
                             this.mana -= object.getDamageCost();
                             object.increaseDamage();
                             upgradeDamage = !upgradeDamage;
@@ -798,7 +778,7 @@ public static final int CELLSIZE = 32;
 	@Override
     public void draw() {
         // main loop here
-
+        
         // call tick method for all movable objects
         if (gameOver){
             //negates time controls below
@@ -807,7 +787,7 @@ public static final int CELLSIZE = 32;
             this.waveTotal++;
             this.manaCount++;
         }
-
+        
         else if (pause){
             //negates time controls below
             this.timer++;
@@ -920,6 +900,7 @@ public static final int CELLSIZE = 32;
                 }
             }
         }
+
         //draw game objects
         for (GameObject object : allObjects){
             object.draw(this);
@@ -1312,7 +1293,7 @@ public static final int CELLSIZE = 32;
                 result.set(i, j, rotated.getRGB(i, j));
             }
         }
-        
+
         return result;
     }
 }
