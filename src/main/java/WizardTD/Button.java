@@ -22,4 +22,27 @@ public class Button {
     public boolean waveFlag = false;
     public boolean manaFlag = false;
     public boolean manaSpellFlag = false;
+
+    /**
+     * Constructor for non-dynamic boxes
+     * @param x
+     * @param y
+     * @param width
+     * @param height
+     * @param textSize
+     * @param textAlign
+     * @param textMessage
+     * @param boxFlag
+     */
+    public Button (int x, int y, int width, int height, int textSize, int textAlign, String textMessage, boolean boxFlag){
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.textSize = textSize;
+        this.textAlign = textAlign;
+        this.textMessage = textMessage;
+        this.boxFlag = boxFlag;
+    }
+
 }
