@@ -45,4 +45,36 @@ public class Button {
         this.boxFlag = boxFlag;
     }
 
+    /**
+     * Constructor for dynamic boxes
+     * @param x
+     * @param y
+     * @param width
+     * @param height
+     * @param textSize
+     * @param textAlign
+     * @param textMessage
+     * @param boxFlag
+     * @param hoverFlagTower
+     * @param hoverFlagMana
+     * @param waveFlag
+     * @param manaFlag
+     * @param manaSpellFlag
+     */
+    public Button (int x, int y, int width, int height, int textSize, int textAlign, String textMessage, boolean boxFlag, boolean hoverFlagTower, boolean hoverFlagMana, boolean waveFlag, boolean manaFlag, boolean manaSpellFlag){
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.textSize = textSize;
+        this.textAlign = textAlign;
+        this.textMessage = textMessage;
+        this.boxFlag = boxFlag;
+        this.hoverFlagTower = hoverFlagTower;
+        this.hoverFlagMana = hoverFlagMana;
+        this.waveFlag = waveFlag;
+        this.manaFlag = manaFlag;
+        this.manaSpellFlag = manaSpellFlag;
+    }
+
 }
