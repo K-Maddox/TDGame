@@ -77,4 +77,17 @@ public class Button {
         this.manaSpellFlag = manaSpellFlag;
     }
 
+    /**
+     * Return if clicked
+     * @param mouseX, mouseY
+     * @return if mouse position is within the x and y coordinates of the box
+     */
+    public boolean isClicked(float mouseX, float mouseY){
+        if (mouseX >= this.x && mouseX <= this.x + this.width && mouseY >= this.y && mouseY <= this.y + this.height){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
