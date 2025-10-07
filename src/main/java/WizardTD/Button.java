@@ -170,4 +170,12 @@ public class Button {
         return this.activeFlag;
     }
 
+    /**
+     * used to determine if the button is clicked or hovered over
+     */
+    public void setActiveFlag(){
+        this.activeFlag = !activeFlag;
+    }
+
+
 }
