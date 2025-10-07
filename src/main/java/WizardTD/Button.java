@@ -121,7 +121,7 @@ public class Button {
     public int getHeight(){
         return this.height;
     }
-
+    
     /**
      * get text colour
      * @return text colour
@@ -177,5 +177,51 @@ public class Button {
         this.activeFlag = !activeFlag;
     }
 
+    /**
+     * set the text message to the parameter provided - useful for the dyanmic buttons with changing text
+     * @param textMessage
+     */
+    public void setText(String textMessage){
+        this.textMessage = textMessage;
+    }
+    
+    /**
+     * get if its part of the wave button
+     * @return if a wave button
+     */
+    public boolean getWaveFlag(){
+        return this.waveFlag;
+    }
+    
+    /**
+     * get if its part of the mana button
+     * @return if a mana button
+     */
+    public boolean getManaFlag(){
+        return this.manaFlag;
+    }
 
+    /**
+     * for the toolkit box that displays cost over T button
+     * @return if it has a toolkit for tower button
+     */
+    public boolean getHoverFlagTower(){
+        return this.hoverFlagTower;
+    }
+
+    /**
+     * for the toolkit box that displays cost over M button
+     * @return if it has a toolkit for mana button
+     */
+    public boolean getHoverFlagMana(){
+        return this.hoverFlagMana;
+    }
+
+    /**
+     * for the mana spell button
+     * @return if it has a toolkit for mana button
+     */
+    public boolean getManaSpellFlag(){
+        return this.manaSpellFlag;
+    }
 }
