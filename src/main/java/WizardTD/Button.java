@@ -122,4 +122,52 @@ public class Button {
         return this.height;
     }
 
+    /**
+     * get text colour
+     * @return text colour
+     */
+    public int getColour(){
+        return this.textColour;
+    }
+
+    /**
+     * get the string message for the buttton
+     * @return message
+     */
+    public String getText(){
+        return this.textMessage;
+    }
+
+    /**
+     * get the size of the text
+     * @return text size
+     */
+    public int getTextSize(){
+        return this.textSize;
+    }
+
+    /**
+     * get the alignment of the text in the box
+     * @return align value
+     */
+    public int getTextAlign(){
+        return this.textAlign;
+    }
+
+    /**
+     * get if the button has a box around it
+     * @return if has box
+     */
+    public boolean getFlag(){
+        return this.boxFlag;
+    }
+
+    /**
+     * get if the button is clicked or hovered over
+     * @return activeFlag
+     */
+    public boolean getActiveFlag(){
+        return this.activeFlag;
+    }
+
 }
