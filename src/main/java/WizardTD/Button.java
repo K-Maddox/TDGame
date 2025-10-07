@@ -90,4 +90,36 @@ public class Button {
         }
     }
 
+    /**
+     * get x coordinate
+     * @return x
+     */
+    public int getX(){
+        return this.x;
+    }
+
+    /**
+     * get Y coordinate
+     * @return y
+     */
+    public int getY(){
+        return this.y;
+    }
+
+    /**
+     * get button width
+     * @return width
+     */
+    public int getWidth(){
+        return this.width;
+    }
+
+    /**
+     * get button height
+     * @return
+     */
+    public int getHeight(){
+        return this.height;
+    }
+
 }
