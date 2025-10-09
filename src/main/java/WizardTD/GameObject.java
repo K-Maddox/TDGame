@@ -15,5 +15,16 @@ public abstract class GameObject {
     protected Monster target;
     protected int hp;
     protected boolean drawMethodCalled = false;
-    
+
+    /**
+     * constructor for all objects that require being drawn
+     * @param x
+     * @param y
+     * @param sprite
+     */
+    public GameObject(int x, int y, PImage sprite){
+        this.x = x;
+        this.y = y;
+        this.sprite = sprite;
+    }
 }
