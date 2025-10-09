@@ -9,5 +9,11 @@ import java.util.*;
  */
 public abstract class GameObject {
     
+    protected int x;
+    protected int y;
+    protected PImage sprite;
+    protected Monster target;
+    protected int hp;
+    protected boolean drawMethodCalled = false;
     
 }
