@@ -27,4 +27,44 @@ public abstract class GameObject {
         this.y = y;
         this.sprite = sprite;
     }
+
+    /**
+     * returns x coordinate
+     * @return x
+     */
+    public int getX(){
+        return this.x;
+    }
+
+    /**
+     * returns y coordinate
+     * @return y
+     */
+    public int getY(){
+        return this.y;
+    }
+
+    /**
+     * returns sprite width
+     * @return width
+     */
+    public int getWidth(){
+        return this.sprite.width;
+    }
+
+    /**
+     * returns sprite height
+     * @return height
+     */
+    public int getHeight(){
+        return this.sprite.height;
+    }
+
+    /**
+     * returns sprite used
+     * @return sprite
+     */
+    public PImage getSprite(){
+        return this.sprite;
+    }
 }
