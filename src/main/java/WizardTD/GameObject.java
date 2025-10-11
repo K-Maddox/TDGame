@@ -123,4 +123,18 @@ public abstract class GameObject {
     public boolean getDeathSequence(){
         return false;
     }
+
+    /**
+     * handles logic of every object
+     */
+    public void tick(){
+
+    }
+
+    /**
+     * handles collisions for every object
+     */
+    public void collide(){
+
+    }
 }
