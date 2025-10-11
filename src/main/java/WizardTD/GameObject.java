@@ -100,4 +100,27 @@ public abstract class GameObject {
     public int getRange(){
         return 0;
     }
+
+    /*
+     * resets tower timer
+     */
+    public void resetTimer(){
+
+    }
+
+    /**
+     * returns tower damage
+     * @return damage
+     */
+    public int getDamage(){
+        return 0;
+    }
+
+    /**
+     * returns if monster is in death sequence
+     * @return if in death sequence
+     */
+    public boolean getDeathSequence(){
+        return false;
+    }
 }
