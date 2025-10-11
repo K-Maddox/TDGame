@@ -137,4 +137,23 @@ public abstract class GameObject {
     public void collide(){
 
     }
+
+    /**
+     * checks collisions for each object
+     * @param allMonsters
+     * @return default false
+     */
+    public boolean checkCollision(ArrayList<Monster> allMonsters){
+        return false;
+    }
+
+    /**
+     * checks collision of monster and fireball
+     * @param allFireballs
+     * @return default false
+     */
+    public boolean checkFireballCollision(ArrayList<Fireball> allFireballs){
+        return false;
+    }
+
 }
