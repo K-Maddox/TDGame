@@ -67,4 +67,20 @@ public abstract class GameObject {
     public PImage getSprite(){
         return this.sprite;
     }
+
+    /**
+     * method to change the game object sprite
+     * @param sprite
+     */
+    public void setSprite(PImage sprite){
+        this.sprite = sprite;
+    }
+
+    /**
+     * draws every object to screen
+     */
+    public void draw(PApplet app){
+        app.image(this.sprite, this.x, this.y);
+        drawMethodCalled = true;
+    }
 }
