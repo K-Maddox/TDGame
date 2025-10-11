@@ -83,4 +83,21 @@ public abstract class GameObject {
         app.image(this.sprite, this.x, this.y);
         drawMethodCalled = true;
     }
+
+    /**
+     * returns if tower is active
+     * @return default set to true
+     */
+    public boolean towerActive(){
+        //handles tower recharge
+        return true;
+    }
+
+    /**
+     * returns tower range
+     * @return default 0
+     */
+    public int getRange(){
+        return 0;
+    }
 }
