@@ -172,5 +172,19 @@ public abstract class GameObject {
         return this.hp;
     }
 
+    /**
+     * method that kills monster
+     */
+    public void banish(){
+
+    }
+
+    /**
+     * method to incraese tower range
+     */
+    public void increaseRange(){
+
+    }
+
 
 }
