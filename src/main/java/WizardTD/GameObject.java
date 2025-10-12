@@ -156,4 +156,21 @@ public abstract class GameObject {
         return false;
     }
 
+    /**
+     * returns the target monster
+     * @return monster
+     */
+    public Monster getTarget(){
+        return this.target;
+    }
+
+    /**
+     * returns monster hp
+     * @return hp
+     */
+    public int getHp(){
+        return this.hp;
+    }
+
+
 }
