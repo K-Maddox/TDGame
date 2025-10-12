@@ -186,5 +186,18 @@ public abstract class GameObject {
 
     }
 
+    /**
+     * method to increase tower firing speed
+     */
+    public void increaseFiringSpeed(){
+
+    }
+
+    /**
+     * method to increase tower damage
+     */
+    public void increaseDamage(){
+
+    }
 
 }
