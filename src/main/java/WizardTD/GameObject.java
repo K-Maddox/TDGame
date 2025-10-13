@@ -216,4 +216,21 @@ public abstract class GameObject {
         return 0;
     }
 
+    /**
+     * returns the number of tower damage upgrades
+     * @return default 0
+     */
+    public int getIncreaseDamageCount(){
+        return 0;
+    }
+
+    /**
+     * returns the current cost of the tower range upgrade
+     * @return default 0
+     */
+    public int getRangeCost(){
+        return 0;
+    }
+
+
 }
