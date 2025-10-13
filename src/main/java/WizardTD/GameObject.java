@@ -232,5 +232,19 @@ public abstract class GameObject {
         return 0;
     }
 
+    /**
+     * returns the current cost of the tower firing speed upgrade
+     * @return default 0
+     */
+    public int getSpeedCost(){
+        return 0;
+    }
 
+    /**
+     * returns the current cost of the tower damage upgrade
+     * @return default 0
+     */
+    public int getDamageCost(){
+        return 0;
+    }
 }
