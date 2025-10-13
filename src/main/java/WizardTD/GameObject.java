@@ -200,4 +200,20 @@ public abstract class GameObject {
 
     }
 
+    /**
+     * returns the number of tower range upgrades
+     * @return default 0
+     */
+    public int getIncreaseRangeCount(){
+        return 0;
+    }
+
+    /**
+     * returns the number of tower firing speed upgrades
+     * @return default 0
+     */
+    public int getIncreaseSpeedCount(){
+        return 0;
+    }
+
 }
