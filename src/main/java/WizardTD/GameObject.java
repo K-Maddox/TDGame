@@ -247,4 +247,19 @@ public abstract class GameObject {
     public int getDamageCost(){
         return 0;
     }
+
+    /**
+     * method to check if target is alive for fireball
+     */
+    public void targetCheck(){
+
+    }
+
+    /**
+     * returns starting Hp for monster
+     * @return default 0
+     */
+    public int getStartHp(){
+        return 0;
+    }
 }
