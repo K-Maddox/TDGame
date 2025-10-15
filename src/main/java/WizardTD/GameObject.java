@@ -262,4 +262,20 @@ public abstract class GameObject {
     public int getStartHp(){
         return 0;
     }
+
+    /**
+     * returns speed of movable object
+     * @return default 0
+     */
+    public float getSpeed(){
+        return 0;
+    }
+
+    /**
+     * reutrns monster armour
+     * @return default 0
+     */
+    public float getArmour(){
+        return 0;
+    }
 }
