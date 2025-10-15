@@ -278,4 +278,20 @@ public abstract class GameObject {
     public float getArmour(){
         return 0;
     }
+
+    /**
+     * returns the mana gained on monster kill
+     * @return default 0
+     */
+    public int getManaGained(){
+        return 0;
+    }
+
+    /**
+     * method to check if monster or fireball is alive
+     * @return default false
+     */
+    public boolean isAlive(){
+        return false;
+    }
 }
