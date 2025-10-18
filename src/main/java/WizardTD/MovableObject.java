@@ -23,5 +23,29 @@ public class MovableObject extends GameObject {
         this.alive = true;
     }
 
-    
+    /**
+     * draw method includes the attribute for alive
+     */
+    @Override
+    public void draw(PApplet app){
+        
+        if (this.alive){
+            app.image(this.sprite, this.x, this.y);
+        }
+    }
+
+    /**
+     * collisions kill the movable object
+     */
+    public void collide(){
+        this.alive = false;
+    }
+
+    /**
+     * returns if object is alive
+     */
+    @Override
+    public boolean isAlive(){
+        return this.alive;
+    }
 }
