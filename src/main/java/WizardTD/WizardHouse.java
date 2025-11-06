@@ -36,4 +36,29 @@ public class WizardHouse extends GameObject {
         this.target = monster;
     }
 
+    /**
+     * checks if any monsters have reached the wizard house
+     * @param an array of all monsters
+     * @return if a monster has reached the house
+     */
+    @Override
+    public boolean checkCollision(ArrayList<Monster> allMonsters){
+        
+        for (Monster object : allMonsters){
+
+            if (object.isAlive()){
+                int objectLeft = object.getX();
+                int objectRight = object.getX() + object.getWidth();
+                int objectTop = object.getY();
+                int objectBottom = object.getY() + object.getHeight();
+                int currentRight = this.x + this.sprite.width;
+                int currentBottom = this.y + this.sprite.height;
+
+                if (currentRight > objectLeft && this.x < objectRight && currentBottom > objectTop && this.y < objectBottom){
+                    this.target = (Monster) object;
+                    return true;
+                }
+            }
+        } return false;
+    }
 }
