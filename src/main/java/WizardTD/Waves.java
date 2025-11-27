@@ -5,5 +5,14 @@ package WizardTD;
  */
 public class Waves {
     
+    protected int duration;
+    protected float preWavePause;
+    protected String monster;
+    protected int hp;
+    protected float speed;
+    protected float armour;
+    protected int manaGained;
+    protected int quantity;
+
     
 }
