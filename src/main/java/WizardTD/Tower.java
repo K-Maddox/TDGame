@@ -24,6 +24,25 @@ public class Tower extends GameObject {
     protected int timer = 0;
     protected float rechargeTime;
 
-    
+    /**
+     * Constructor for Tower initialises the below attributes as per the config file
+     * @param x
+     * @param y
+     * @param sprite
+     * @param range
+     * @param firingSpeed
+     * @param damage
+     * @param cost
+     */
+    public Tower(int x, int y, PImage sprite, int range, float firingSpeed, int damage, int cost){
+        super(x, y, sprite);
+        this.range = range;
+        this.firingSpeed = firingSpeed;
+        this.damage = damage;
+        this.initial_damage = damage;
+        this.cost = cost;
+        this.rechargeTime = firingSpeed * 60;
+    }
+
     
 }
