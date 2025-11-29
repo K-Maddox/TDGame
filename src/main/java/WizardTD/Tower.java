@@ -44,5 +44,54 @@ public class Tower extends GameObject {
         this.rechargeTime = firingSpeed * 60;
     }
 
-    
+    /**
+     * returns cost of tower to build
+     * @return cost
+     */
+    public int getCost(){
+        return this.cost;
+    }
+
+    /**
+     * increases the range when U1 is selected
+     */
+    @Override
+    public void increaseRange(){
+        if (this.increaseRangeCount < 3){
+            this.range += 32; //upgrade increases range by 1 tile (32 pixels)
+            increaseRangeCount++;
+            if (this.rangeCost < 40){
+                this.rangeCost = this.rangeCost + 10;
+            }
+        }
+    }
+
+    /**
+     * increases the firing speed with U2 is selected
+     */
+    @Override
+    public void increaseFiringSpeed(){
+        if (this.increaseSpeedCount < 3){
+            this.firingSpeed += 0.5; //upgrade increases fireball per second speed by 0.5
+            increaseSpeedCount++;
+            if (this.speedCost < 40){
+                this.speedCost = this.speedCost + 10;
+            }
+        }
+    }
+
+    /**
+     * increases the damage when U3 is selected
+     */
+    @Override
+    public void increaseDamage(){
+        if (increaseDamageCount < 3){
+            this.damage += this.initial_damage * 0.5; //upgrade increases damage by half of initial_tower_damage
+            increaseDamageCount++;
+            if (this.damageCost < 40){
+                this.damageCost = this.damageCost + 10;
+            }
+        }
+    }
+
 }
