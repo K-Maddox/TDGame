@@ -189,4 +189,58 @@ public class Tower extends GameObject {
     public float getRechargeTime(){
         return this.rechargeTime;
     }
+
+    /**
+     * returns if turret is ready to shoot
+     * @return if ready to shoot
+     */
+    @Override
+    public boolean towerActive(){
+        if (this.timer == this.rechargeTime) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    /**
+     * recharges turret after shooting
+     */
+    @Override
+    public void tick(){
+        if (this.timer < this.rechargeTime){
+            this.timer++;
+        }
+    }
+
+    /**
+     * resets timer once turret has fired
+     */
+    public void resetTimer(){
+        this.timer = 0;
+    }
+
+    /**
+     * checks if monster is in range
+     * @return if monster is in range
+     */
+    @Override
+    public boolean checkCollision(ArrayList<Monster> allMonsters){
+        
+        for (Monster object : allMonsters){
+            
+            //checks monster is in range
+            if (object.isAlive()){
+                int objectCenterX = object.getX() + object.getWidth()/2;
+                int objectCentreY = object.getY() + object.getHeight()/2;
+                
+                double distance = Math.sqrt(Math.pow(objectCenterX - this.x, 2) + Math.pow(objectCentreY - this.y, 2));
+                if (distance <= this.range){
+                    this.target = (Monster) object; //sets target object
+                    return true;
+                }
+            }
+        } return false;
+    }
 }
