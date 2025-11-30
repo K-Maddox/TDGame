@@ -94,4 +94,31 @@ public class Tower extends GameObject {
         }
     }
 
+    /**
+     * returns the number of range upgrades made
+     * @return count of range upgrades
+     */
+    @Override
+    public int getIncreaseRangeCount(){
+        return this.increaseRangeCount;
+    }
+
+    /**
+     * returns the number of firing speed upgrades made
+     * @return count of firing speed upgrades
+     */
+    @Override
+    public int getIncreaseSpeedCount(){
+        return this.increaseSpeedCount;
+    }
+
+    /**
+     * returns the number of damage upgrades made
+     * @return count of damage upgrades
+     */
+    @Override
+    public int getIncreaseDamageCount(){
+        return this.increaseDamageCount;
+    }
+
 }
