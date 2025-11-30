@@ -121,4 +121,72 @@ public class Tower extends GameObject {
         return this.increaseDamageCount;
     }
 
+    /**
+     * returns the current cost of U1
+     * @return range cost
+     */
+    @Override
+    public int getRangeCost(){
+        return this.rangeCost;
+    }
+
+    /**
+     * returns the current cost of U2
+     * @return speed cost
+     */
+    @Override
+    public int getSpeedCost(){
+        return this.speedCost;
+    }
+
+    /**
+     * returns the cost of U3
+     * @return damage cost
+     */
+    @Override
+    public int getDamageCost(){
+        return this.damageCost;
+    }
+
+    /**
+     * returns firing speed
+     * @return firing speed
+     */
+    public float getFiringSpeed(){
+        return this.firingSpeed;
+    }
+
+    /**
+     * returns the monster that has come in its range
+     * @return monster
+     */
+    public Monster getTarget(){
+        return this.target;
+    }
+
+    /**
+     * returns the damage it can inflict on monster
+     * @return damage
+     */
+    @Override
+    public int getDamage(){
+        return this.damage;
+    }
+
+    /**
+     * returns current range
+     * @return range
+     */
+    @Override
+    public int getRange(){
+        return this.range;
+    }
+
+    /**
+     * returns the waiting period between shots
+     * @return recharge time
+     */
+    public float getRechargeTime(){
+        return this.rechargeTime;
+    }
 }
