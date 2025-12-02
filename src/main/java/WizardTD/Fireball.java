@@ -7,5 +7,15 @@ import processing.core.PImage;
 */
 public class Fireball extends MovableObject {
     
+    protected int speed = 5; //fireball moves at 5 pixels per tick
+    protected int damage;
+    
+    protected Monster target;
+    
+    protected int destX;
+    protected int destY;
+    protected int xVel = this.speed;
+    protected int yVel = this.speed;
+
     
 }
