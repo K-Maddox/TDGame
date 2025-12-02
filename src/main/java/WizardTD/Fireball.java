@@ -33,5 +33,42 @@ public class Fireball extends MovableObject {
         this.destY = target.getY();
     }
 
-    
+    /**
+     * Returns damage dealt to monster
+     * @return damage
+     */
+    @Override
+    public int getDamage(){
+        return this.damage;
+    }
+
+    /**
+     * Checks to make sure target monster is either alive or not banished. Otherwise fireball dies.
+     */
+    @Override
+    public void targetCheck(){
+        if (!this.target.isAlive()){
+            this.alive = false;
+        }
+    }
+
+    /**
+     * Handles logic of movement from the tower to target monster
+     */
+    public void tick(){
+
+        if (this.alive){
+            if (this.x > target.getX()){
+                this.x -= this.speed;
+            } else {
+                this.x += this.speed;
+            }
+
+            if (this.y > target.getY()){
+                this.y -= this.speed;
+            } else {
+                this.y += this.speed;
+            }
+        }
+    }
 }
