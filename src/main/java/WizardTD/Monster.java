@@ -45,5 +45,37 @@ public class Monster extends MovableObject {
         this.allPaths = allPaths;
     }
 
+    /**
+     * returns current Hp
+     */
+    @Override
+    public int getHp(){
+        return this.hp;
+    }
+
+    /**
+     * returns speed
+     */
+    @Override
+    public float getSpeed(){
+        return this.speed;
+    }
+
+    /**
+     * returns armour
+     */
+    @Override
+    public float getArmour(){
+        return this.armour;
+    }
+
+    /**
+     * returns starting hp
+     */
+    @Override
+    public int getStartHp(){
+        return this.startHp;
+    }
+
     
 }
